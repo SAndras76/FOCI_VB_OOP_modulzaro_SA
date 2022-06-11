@@ -1,0 +1,75 @@
+1. Mi a különbség az Exception és a RuntimeException között?
+Hogyan kell használni?
+Mire érdemes figyelni a kezelésüknél?
+Az Exception és a  RuntimeException a hibakezelés módjának két külön osztályába tartozik: míg előbbi ellenőrzött, addig utóbbi ellenőrizetlen
+Exception: mikor a fordító érzékeli a hibalehetőséget, és nem is hajlandó lefordítani. Try/catch-el tudjuk "elkapni" az Exceptiönöket
+           programot, ez a hibalehetőség kezeletlen, pl.  fájl beolvasásánál.
+ RuntimeException: a program futása közben előforduló hiba, amelyre nem feltétlen lehet
+                   előre felkészülni, try/catch blokk nélkül használhatóak és még a  throws-al se kell jelezni őket.
+
+
+
+
+
+2. Hogyan tudunk egy kollekcióból bejárás közben elemeket törölni?
+Mutasd be egy vázlatosan az elemek törlésének a módját.
+
+-Iterator metódus segítségével tudunk bejárás közben elemeket törölni.
+a remove-val törölhetjük a meghatározott feltétell rendelkező elemet, a nex-tel meg továbbléphetünk a bejárás közben
+Feltételezzük, hogy létezik egy names nevű ArrayList, amiben nevek vannak eltárolva
+
+Iterator<String> i = names.iterator();
+
+while(i.hasNext()) {
+    String e = i.next();
+    if (e.startsWith("K")) {
+        i.remove();
+    }
+}
+A kód a K-val kezdődő neveket kiszedi a listából
+
+3. Ismertesd az OOP koncepciókat a javaban
+
+Absztrakció
+
+azt határozza meg, hogy milyen adatoknak kell láthatónak lennie, és mit kell rejteni.
+megvalósításához használjuk az interface-eket és az absztrakt osztályokat
+Enkapszuláció
+
+-ami (logikailag) összetartozik, mindaz egy egységet képez
+
+- egy osztály egy logikailag összetartozó egység - a field-jei általában,
+metódusai alkalmanként private láthatósági jelzőt kapnak
+
+Öröklődés
+
+-az osztályok öröklődhetnek más osztályokból
+-Java-ban minden osztály Ősanyja (Ősatyja) az Object osztály
+(java.lang.Object)
+-ez azt jelenti, hogy a Gyerek osztály megörökli a Szülő osztály publikus
+field-jeit és metódusait - tehát használhatja azokat
+
+Többalakúság vagy polymorphismus
+
+-ha több metódusnak ugyanaz a neve, mégis mást csinálnak
+overloadinggal érhető el és overridinggal írható felül
+
+
+Egyéb koncepciók
+
+-csatolás -osztályok mennyit látnak egymásból (láthatósági jelzők)
+-kohézió -egy egység  egyetlen jól meghatározott feladatot lát el
+-asszociáció -az objektumok közötti kapcsolatot határozza meg
+-aggregáció -az association megvalósítása, amelyben az objektum állapotához tartozik egy másik
+objektum, amely önállóan is létező
+-kompozíció -az association másik megvalósítása, amelyben az objektum állapotához tartozik egy másik
+objektum, és a tartalmazó objektum nem létezik a “szülő” nélkül
+
+4. Milyen adatszerkezettel lehetne a beolvasott meccsek adatait mindig dátum szerint rendezett sorrendben tárolni?
+Mit kellene a meccsek adatait tároló osztálynál változtatni, hogy képes legyen az adatszerkezettel együttműködni?
+
+
+
+
+
+
