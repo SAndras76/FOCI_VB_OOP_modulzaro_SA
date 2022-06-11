@@ -52,7 +52,7 @@ public class Foci_VB {
                     }
                 }
             }
-            System.out.println("4. feladat: \n");
+            System.out.println("3. feladat: \n");
             int winCounter =0;
 
             for (MatchesAll wins : matchesAlls) {
@@ -66,6 +66,22 @@ public class Foci_VB {
                 }
             }
             System.out.println(" A " + yearCup +". évben a fogadó "+ winCounter + " alkalommal nyert");
+            System.out.println("4. feladat \n");
+            System.out.println("A fordulónkénti gólok száma: \n");
+            Map<String, Integer> goalSumByStage = new TreeMap<>();
+
+            for (MatchesAll goal : matchesAlls ) {
+                if (goal.getYear().equals(yearCup)) {
+                    int sumOfGoals = goalSumByStage.getOrDefault(goal.getStage(), 0);
+                    goalSumByStage.put(goal.getStage(), sumOfGoals + goal.getGoals_a() + goal.getGoals_b());
+                }
+
+                for (String stage : goalSumByStage.keySet()) {
+                    System.out.println(stage + ": " + goalSumByStage.get(stage));
+                }
+            }
+
+
             } catch (
                     IOException e) {
                 e.printStackTrace();

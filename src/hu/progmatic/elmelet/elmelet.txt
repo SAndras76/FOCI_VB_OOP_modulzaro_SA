@@ -67,7 +67,8 @@ objektum, és a tartalmazó objektum nem létezik a “szülő” nélkül
 
 4. Milyen adatszerkezettel lehetne a beolvasott meccsek adatait mindig dátum szerint rendezett sorrendben tárolni?
 Mit kellene a meccsek adatait tároló osztálynál változtatni, hogy képes legyen az adatszerkezettel együttműködni?
-
+-Map szerkezettel
+-a dátumot double formátumban kell megadni (?)
 
 
 
